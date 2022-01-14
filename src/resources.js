@@ -2,31 +2,44 @@ module.exports = {
   // # Countries
   AU: {
     QLD: [
-      {
-        title: "Example Queensland",
-        phone: "1-800-555-1212",
-        email: "example@example.com",
-        website: "https://example.com",
-      }
+
     ],
 
     default: [
       {
-        title: "Example Australia",
-        phone: "1-800-555-1212",
-        email: "example@example.com",
-        website: "https://example.com",
+        title: "Beyond Blue",
+        phone: "1300 22 4636",
+        website: "www.beyondblue.org.au",
+      },
+      {
+        title: "Kids Helpline",
+        phone: "1800 55 1800",
+        website: "www.kidshelpline.com.au",
+      },
+      {
+        title: "Lifeline",
+        phone: "13 11 14",
+        website: "www.lifeline.org.au",
+      },
+      {
+        title: "Samaritans",
+        phone: "135 247",
+        website: "thesamaritans.org.au",
+      },
+      {
+        title: "SANE",
+        phone: "1800 18 7263",
+        website: "www.sane.org",
+      },
+      {
+        title: "headspace",
+        website: "headspace.org.au",
       }
     ]
   },
 
   // Worldwide
   default: [
-    {
-      title: "Example Default",
-      phone: "1-800-555-1212",
-      email: "example@example.com",
-      website: "https://example.com",
-    }
+  
   ]
 }
