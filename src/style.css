@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inconsolata', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0c0c0c;
+  color: #fff;
+}
+
+p {
+  margin: 5px 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40vw;
+  margin: 20px auto;
+}
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 1.5em;
+  margin: 30px 0;
+}
+
+.Header p:first-child {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.Header p:last-child {
+  font-size: .75em;
+}
+
+.emoji {
+  display: inline-block;
+  width: auto;
+  height: 1em;
+  vertical-align: -0.25em;
+}
+
+.Card {
+  display: flex;
+  flex-direction: row;
+  background: #212121;
+  padding: 10px 15px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.Card .icon {
+  font-size: 3em;
+}
+
+.Card .text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  font-size: 1.15em;
+}
+
+.Card .text p:first-child {
+  font-size: 1.5em;
+}
+
+.Card .text .links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Card .text .links a {
+  margin: 10px 15px 0 0;
+}
