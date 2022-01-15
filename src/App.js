@@ -11,16 +11,15 @@ function App() {
   const [locationData, setLocationData] = useState({
     regionName: '',
     country: '',
-    countryCode: ''
+    country_code: ''
   });
 
   const [locResources, setLocResources] = useState([]);
 
   useEffect(() => {
     async function getGeoData() {
-      const res = await axios.get('http://ip-api.com/json/?fields=16415')
+      const res = await axios.get('https://get.geojs.io/v1/ip/geo.json')
       if (res.status !== 200) return;
-      if (res.data.status !== "success") return;
       console.dir(res.data);
       setLocationData(res.data);
       getResourceData(res.data);
@@ -29,25 +28,25 @@ function App() {
     function getResourceData(data) {
       // @zacimac - This looks very messy, I don't think i'm doing this right.
       let resourceData = [];
-      if (resources[data.countryCode]) {
-        if (resources[data.countryCode].constructor === Object) {
-          if (resources[data.countryCode][data.region]) {
-            if (resources[data.countryCode][data.region].constructor === Object) {
-              if (resources[data.countryCode][data.region][data.city]) {
-                resourceData = resourceData.concat(resources[data.countryCode][data.region][data.city]);
+      if (resources[data.country_code]) {
+        if (resources[data.country_code].constructor === Object) {
+          if (resources[data.country_code][data.region]) {
+            if (resources[data.country_code][data.region].constructor === Object) {
+              if (resources[data.country_code][data.region][data.city]) {
+                resourceData = resourceData.concat(resources[data.country_code][data.region][data.city]);
               }
-              if (resources[data.countryCode][data.region].default) {
-                resourceData = resourceData.concat(resources[data.countryCode][data.region].default);
+              if (resources[data.country_code][data.region].default) {
+                resourceData = resourceData.concat(resources[data.country_code][data.region].default);
               }
-            } else if (resources[data.countryCode][data.region].constructor === Array) {
-              resourceData = resourceData.concat(resources[data.countryCode][data.region]);
+            } else if (resources[data.country_code][data.region].constructor === Array) {
+              resourceData = resourceData.concat(resources[data.country_code][data.region]);
             }
           }
-          if (resources[data.countryCode].default) {
-            resourceData = resourceData.concat(resources[data.countryCode].default);
+          if (resources[data.country_code].default) {
+            resourceData = resourceData.concat(resources[data.country_code].default);
           }
-        } else if (resources[data.countryCode].constructor === Array) {
-          resourceData = resourceData.concat(resources[data.countryCode]);
+        } else if (resources[data.country_code].constructor === Array) {
+          resourceData = resourceData.concat(resources[data.country_code]);
         }
       }
       setLocResources(resourceData.concat(resources.default));
@@ -64,7 +63,7 @@ function App() {
       <div className="Header">
         <p><FontAwesomeIcon icon={faHeart} color="#fd79a8" className="icon" /> It's okay</p>
         <p>Here are contacts that can help you based on your location, they care!</p>
-        <p>Location: {locationData.regionName ? `${locationData.regionName}, ` : ''}{locationData.country}.</p>
+        <p>Location: {locationData.region ? `${locationData.region}, ` : ''}{locationData.country}.</p>
       </div>
 
       <div className="Resources">
