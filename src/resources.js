@@ -1,4 +1,37 @@
 module.exports = {
+  /* Format
+  <Country Code>: {
+    <Region>: {
+      <City>: [resources],
+      
+      default: [resources]
+    },
+
+    default: [resources]
+  }
+
+  # OR
+
+  <Country Code>: {
+    <Region>: [resources],
+
+    default: [resources]
+  }
+
+  # OR
+
+  <Country Code>: [resources]
+
+
+  @resources = {
+    title: String,
+    website: String,
+    phone: String,
+    email: String
+  }
+  
+  */
+
   // # Countries
   AU: {
     Queensland: [
