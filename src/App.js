@@ -56,7 +56,7 @@ function App() {
       <div className="Header">
         <p><FontAwesomeIcon icon={faHeart} color="#fd79a8" className="icon" /> It's okay</p>
         <p>Here are contacts that can help you based on your location, they care!</p>
-        <p>Location: {locationData.region ? `${locationData.region}, ` : ''}{locationData.country}.</p>
+        <p>Location: {locationData.city ? `${locationData.city}, ` : ''}{locationData.region ? `${locationData.region}, ` : ''}{locationData.country}.</p>
       </div>
 
       <div className="Resources">
