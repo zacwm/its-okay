@@ -25,22 +25,22 @@ function App() {
       getResourceData(res.data);
     }
 
-    function getResourceData(data) {
+    function getResourceData(location) {
       let resourceData = [];
 
-      if (resources[data.country_code]?.constructor === Array)
-        resourceData = resources[data.country_code];
-      else if (resources[data.country_code]?.[data.regionName]?.constructor === Array)
-        resourceData = resources[data.country_code][data.regionName];
-      else if (resources[data.country_code]?.[data.regionName]?.[data.city]?.constructor === Array)
-        resourceData = resources[data.country_code][data.regionName][data.city];
+      if (resources[location.country_code]?.constructor === Array)
+        resourceData = resources[location.country_code];
+      else if (resources[location.country_code]?.[location.regionName]?.constructor === Array)
+        resourceData = resources[location.country_code][location.regionName];
+      else if (resources[location.country_code]?.[location.regionName]?.[location.city]?.constructor === Array)
+        resourceData = resources[location.country_code][location.regionName][location.city];
 
-      if (resources[data.country_code]?.['default']?.constructor === Array)
-        resourceData = resourceData.concat(resources[data.country_code]['default']);
-      else if (resources[data.country_code]?.['default']?.[data.regionName]?.constructor === Array)
-        resourceData = resourceData.concat(resources[data.country_code]['default'][data.regionName]);
-      else if (resources[data.country_code]?.['default']?.[data.regionName]?.[data.city]?.constructor === Array)
-        resourceData = resourceData.concat(resources[data.country_code]['default'][data.regionName][data.city]);
+      if (resources[location.country_code]?.['default']?.constructor === Array)
+        resourceData = resourceData.concat(resources[location.country_code]['default']);
+      else if (resources[location.country_code]?.['default']?.[location.regionName]?.constructor === Array)
+        resourceData = resourceData.concat(resources[location.country_code]['default'][location.regionName]);
+      else if (resources[location.country_code]?.['default']?.[location.regionName]?.[location.city]?.constructor === Array)
+        resourceData = resourceData.concat(resources[location.country_code]['default'][location.regionName][location.city]);
         
       setLocResources(resourceData.concat(resources.default || []));
     }
