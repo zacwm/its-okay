@@ -75,28 +75,28 @@ module.exports = {
       {
         title: "Awel",
         phone: "102",
-        website: "https://awel.be/",
+        website: "awel.be",
       },
       {
         title: "Zelfmoord 1813",
         phone: "1813",
-        website: "https://www.zelfmoord1813.be/",
+        website: "zelfmoord1813.be",
       },
       {
         title: "Tele-Onthaal",
         phone: "106",
-        website: "https://www.tele-onthaal.be/",
+        website: "tele-onthaal.be",
       },
       {
         title: "CAW",
         phone: "102",
-        website: "https://www.caw.be",
+        website: "caw.be",
       },
       {
         //CAW, but targeted towards young people
         title: "JAC",
         phone: "102",
-        website: "https://www.caw.be/jac/",
+        website: "caw.be/jac",
       }
     ]
   },
@@ -105,23 +105,23 @@ module.exports = {
       {
         title: "De Luisterlijn",
         phone: "088 0767 000",
-        website: "https://www.deluisterlijn.nl/",
+        website: "deluisterlijn.nl",
         email: "ehulp@deluisterlijn.nl",
       },
       {
         title: "Kindertelefoon",
         phone: "0800-0432",
-        website: "https://www.kindertelefoon.nl/",
+        website: "kindertelefoon.nl",
       },
       {
         title: "Alles oke?",
         phone: "0800-0450",
-        website: "https://www.allesoke.nl/",
+        website: "allesoke.nl",
       },
       {
         title: "113 Zelfmoord Preventie",
         phone: "0800 0113",
-        website: "https://www.113.nl",
+        website: "113.nl",
       }
     ]
   },
