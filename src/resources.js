@@ -70,6 +70,36 @@ module.exports = {
       }
     ]
   },
+  BE: {
+    default: [
+      {
+        title: "Awel",
+        phone: "102",
+        website: "https://awel.be/",
+      },
+      {
+        title: "Zelfmoord 1813",
+        phone: "1813",
+        website: "https://www.zelfmoord1813.be/",
+      },
+      {
+        title: "Tele-Onthaal",
+        phone: "106",
+        website: "https://www.tele-onthaal.be/",
+      },
+      {
+        title: "CAW",
+        phone: "102",
+        website: "https://www.caw.be",
+      },
+      {
+        //CAW, but targeted towards young people
+        title: "JAC",
+        phone: "102",
+        website: "https://www.caw.be/jac/",
+      }
+    ]
+  },
   NL: {
     default: [
       {
@@ -98,6 +128,6 @@ module.exports = {
 
   // Worldwide
   default: [
-  
+
   ]
 }
