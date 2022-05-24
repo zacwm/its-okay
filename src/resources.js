@@ -70,6 +70,31 @@ module.exports = {
       }
     ]
   },
+  NL: {
+    default: [
+      {
+        title: "De Luisterlijn",
+        phone: "088 0767 000",
+        website: "https://www.deluisterlijn.nl/",
+        email: "ehulp@deluisterlijn.nl",
+      },
+      {
+        title: "Kindertelefoon",
+        phone: "0800-0432",
+        website: "https://www.kindertelefoon.nl/",
+      },
+      {
+        title: "Alles oke?",
+        phone: "0800-0450",
+        website: "https://www.allesoke.nl/",
+      },
+      {
+        title: "113 Zelfmoord Preventie",
+        phone: "0800 0113",
+        website: "https://www.113.nl",
+      }
+    ]
+  },
 
   // Worldwide
   default: [
