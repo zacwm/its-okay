@@ -23,11 +23,12 @@ module.exports = {
   <Country Code>: [resources]
 
 
+  ! No need to add any of the href prefixes.
   @resources = {
-    title: String,
-    website: String,
-    phone: String,
-    email: String
+    title: String, // ! Brand name/Title of the resource
+    website: String, // ! No need to include http:// or https://
+    phone: String,  // ! A number that works with the `tel:` href format
+    email: String // ! A valid email address
   }
   
   */
