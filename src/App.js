@@ -8,6 +8,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faLink, faPhone, faAt } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
+  const [isWaitingLocation, setIsWaitingLocation] = useState(true);
+  const [locationError, setLocationError] = useState(false);
+
   const [locationData, setLocationData] = useState({
     regionName: '',
     country: '',
@@ -18,11 +21,15 @@ function App() {
 
   useEffect(() => {
     async function getGeoData() {
-      const res = await axios.get('https://get.geojs.io/v1/ip/geo.json')
-      if (res.status !== 200) return;
-      console.dir(res.data);
-      setLocationData(res.data);
-      getResourceData(res.data);
+      try {
+        const res = await axios.get('https://get.geojs.io/v1/ip/geo.json');
+        if (res.status !== 200) return;
+        setIsWaitingLocation(false);
+        setLocationData(res.data);
+        getResourceData(res.data);
+      } catch (err) {
+        setLocationError(true);
+      }
     }
 
     function getResourceData(location) {
@@ -56,7 +63,10 @@ function App() {
       <div className="Header">
         <p><FontAwesomeIcon icon={faHeart} color="#fd79a8" className="icon" /> It's okay</p>
         <p>Here are contacts that can help you based on your location, they care!</p>
-        <p>Location: {locationData.city ? `${locationData.city}, ` : ''}{locationData.region ? `${locationData.region}, ` : ''}{locationData.country}.</p>
+        {
+          locationError ? <p className="errorText">Error getting location, it's possible this is due to a privacy setting or extension blocking the request.</p>
+          : <p>{isWaitingLocation ? 'Getting estimated location...' : `Location: ${locationData.city ? `${locationData.city}, ` : ''}${locationData.region ? `${locationData.region}, ` : ''}${locationData.country}`}</p>
+        }
       </div>
 
       <div className="Resources">

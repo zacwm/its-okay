@@ -45,6 +45,11 @@ a {
   font-size: .75em;
 }
 
+.Header .errorText {
+  font-weight: bold;
+  color: #ff0000;
+}
+
 .emoji {
   display: inline-block;
   width: auto;
