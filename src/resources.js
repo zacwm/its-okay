@@ -70,9 +70,64 @@ module.exports = {
       }
     ]
   },
+  BE: {
+    default: [
+      {
+        title: "Awel",
+        phone: "102",
+        website: "awel.be",
+      },
+      {
+        title: "Zelfmoord 1813",
+        phone: "1813",
+        website: "zelfmoord1813.be",
+      },
+      {
+        title: "Tele-Onthaal",
+        phone: "106",
+        website: "tele-onthaal.be",
+      },
+      {
+        title: "CAW",
+        phone: "102",
+        website: "caw.be",
+      },
+      {
+        //CAW, but targeted towards young people
+        title: "JAC",
+        phone: "102",
+        website: "caw.be/jac",
+      }
+    ]
+  },
+  NL: {
+    default: [
+      {
+        title: "De Luisterlijn",
+        phone: "088 0767 000",
+        website: "deluisterlijn.nl",
+        email: "ehulp@deluisterlijn.nl",
+      },
+      {
+        title: "Kindertelefoon",
+        phone: "0800-0432",
+        website: "kindertelefoon.nl",
+      },
+      {
+        title: "Alles oke?",
+        phone: "0800-0450",
+        website: "allesoke.nl",
+      },
+      {
+        title: "113 Zelfmoord Preventie",
+        phone: "0800 0113",
+        website: "113.nl",
+      }
+    ]
+  },
 
   // Worldwide
   default: [
-  
+
   ]
 }
