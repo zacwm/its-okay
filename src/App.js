@@ -12,7 +12,7 @@ function App() {
   const [locationError, setLocationError] = useState(false);
 
   const [locationData, setLocationData] = useState({
-    regionName: '',
+    region: '',
     country: '',
     country_code: ''
   });
@@ -27,6 +27,11 @@ function App() {
         setIsWaitingLocation(false);
         setLocationData(res.data);
         getResourceData(res.data);
+        console.dir({
+          country_code: res.data.country_code,
+          region: res.data.region,
+          city: res.data.city,
+        })
       } catch (err) {
         setLocationError(true);
       }
@@ -37,17 +42,17 @@ function App() {
 
       if (resources[location.country_code]?.constructor === Array)
         resourceData = resources[location.country_code];
-      else if (resources[location.country_code]?.[location.regionName]?.constructor === Array)
-        resourceData = resources[location.country_code][location.regionName];
-      else if (resources[location.country_code]?.[location.regionName]?.[location.city]?.constructor === Array)
-        resourceData = resources[location.country_code][location.regionName][location.city];
+      else if (resources[location.country_code]?.[location.region]?.constructor === Array)
+        resourceData = resources[location.country_code][location.region];
+      else if (resources[location.country_code]?.[location.region]?.[location.city]?.constructor === Array)
+        resourceData = resources[location.country_code][location.region][location.city];
 
       if (resources[location.country_code]?.['default']?.constructor === Array)
         resourceData = resourceData.concat(resources[location.country_code]['default']);
-      else if (resources[location.country_code]?.['default']?.[location.regionName]?.constructor === Array)
-        resourceData = resourceData.concat(resources[location.country_code]['default'][location.regionName]);
-      else if (resources[location.country_code]?.['default']?.[location.regionName]?.[location.city]?.constructor === Array)
-        resourceData = resourceData.concat(resources[location.country_code]['default'][location.regionName][location.city]);
+      else if (resources[location.country_code]?.['default']?.[location.region]?.constructor === Array)
+        resourceData = resourceData.concat(resources[location.country_code]['default'][location.region]);
+      else if (resources[location.country_code]?.['default']?.[location.region]?.[location.city]?.constructor === Array)
+        resourceData = resourceData.concat(resources[location.country_code]['default'][location.region][location.city]);
         
       setLocResources(resourceData.concat(resources.default || []));
     }
